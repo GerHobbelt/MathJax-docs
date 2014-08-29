@@ -293,7 +293,7 @@ MathJax. Here are several reasons web fonts might not be working for you:
    fonts. If you are using IIS, you can enable the delivery of these
    file types by setting a custom mimetype configuration. See, for
    example, `Mads Kristensen's
-   blog <http://madskristensen.net/post/Prepare-webconfig-for-HTML5-and-CSS3.aspx>`__
+   blog <http://madskristensen.net/post/Prepare-webconfig-for-HTML5-and-CSS3>`__
    and `Paul Irish's
    blog <http://paulirish.com/2010/font-face-gotchas/>`__ for
    instructions on how to do this (as well as more background
