@@ -79,7 +79,7 @@ equations they are ``$$...$$`` or ``\\[...\\]``, but they can be
 customized. For how to configure MathJax to scale all mathematics
 relative to the surrounding text, check our documentation for :doc:`the HTML
 output </options/HTML-CSS>` and
-:doc:`the SVG output </options/SVG.html>`.
+:doc:`the SVG output </options/SVG>`.
 
 How do I access the MathJax CDN using a https secure connection?
 ----------------------------------------------------------------
