@@ -23,8 +23,8 @@ will be about 14.4KB. The configuration file can vary greatly in size
 depending on what is included; minimal configurations can be as small as
 3.7KB, reasonable configurations vary between 25KB and 40KB -- bringing
 us to a total of 18KB to 55KB, i.e., roughly a small to medium sized
-image. To learn more about configuring MathJax, see `our
-documentation <http://docs.mathjax.org/en/latest/configuration.html>`__.
+image. To learn more about configuring MathJax, see :doc:`our
+documentation <configuration>`.
 
 Mathematics is not rendering properly in IE. How do I fix that?
 ---------------------------------------------------------------
@@ -77,16 +77,16 @@ displayed with more space and slightly larger fonts. The standard
 delimiters for inline equations are ``\\(...\\)``, while for paragraph
 equations they are ``$$...$$`` or ``\\[...\\]``, but they can be
 customized. For how to configure MathJax to scale all mathematics
-relative to the surrounding text, check our documentation for `the HTML
-output <http://docs.mathjax.org/en/latest/options/HTML-CSS.html>`__ and
-`the SVG output <http://docs.mathjax.org/en/latest/options/SVG.html>`__.
+relative to the surrounding text, check our documentation for :doc:`the HTML
+output <options/HTML-CSS>` and
+:doc:`the SVG output <options/SVG.html>`.
 
 How do I access the MathJax CDN using a https secure connection?
 ----------------------------------------------------------------
 
 The MathJax CDN can be accessed via ``https``. We advise using the protocol 
 agnostic ``//cdn.mathjax.org/mathjax/latest/MathJax.js``. For more 
-information, see `our documentation <http://docs.mathjax.org/en/latest/start.html#secure-access-to-the-cdn>`__.
+information, see :ref:`our documentation <secure-cdn-access>`.
 
 My mathematics is private. Is it safe to use MathJax?
 -----------------------------------------------------
@@ -112,9 +112,9 @@ Does MathJax support Presentation and/or Content MathML?
 MathML comes in two types: Presentation MathML, which describes what an
 equation looks like, and Content MathML, which describes what an
 equation means. By default, MathJax works with Presentation MathML
-and offers an extension for Content MathML, see `the
+and offers an extension for Content MathML, see :ref:`the
 documentation on MathML
-support <http://docs.mathjax.org/en/latest/mathml.html#content-mathml>`__.
+support <content-mathml>`.
 You can also convert your Content MathML expressions to
 Presentation MathML yourself. A good way to do this conversion is with
 an XSL transformation tool, see for example the `web-xslt
@@ -316,8 +316,8 @@ Why doesn't the TeX macro ``\something`` work?
 ----------------------------------------------
 
 It really depends on what ``\something`` is. We have a full list of the
-`supported TeX
-commands </resources/docs/?tex.html#supported-latex-commands>`__. If the
+:ref:`supported TeX
+commands <tex-commands>`. If the
 command you want to use is not in this list, you may be able to define a
 TeX macro for it, or if you want to get really advanced, you can define
 custom JavaScript that implements it (see the files in the extensions
@@ -355,5 +355,5 @@ with ``\newcommand{cmd}{args}{def}``. An example is
 ``\newcommand{\water}{H_{2}O}``, which will output the chemical formula
 for water when you use the ``\water`` command. ``\renewcommand`` works
 as well. You can also store macros in the MathJax configuration. For
-more information, see `the
-documentation <http://docs.mathjax.org/en/latest/tex.html#defining-tex-macros>`__.
+more information, see :ref:`the
+documentation <tex-macros>`.
