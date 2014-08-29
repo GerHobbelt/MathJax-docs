@@ -94,11 +94,11 @@ typeset the page. First we create the following Javascript file:
        MathJax.Ajax.loadComplete("[MathJax]/extensions/measureTime.js");
 
 The first line is just using the convenient
-`MathJax.HTML <http://docs.mathjax.org/en/latest/api/html.html>`__ to
+:ref:`MathJax.HTML <api/html>` to
 create a ``<div style="color: red;">Hello World!</div>`` element. The
 second line will tell to MathJax that ``measureTime.js`` has been
-successfully loaded. Again, we refer to `Synchronizing your code with
-MathJax <http://docs.mathjax.org/en/latest/synchronize.html>`__ for
+successfully loaded. Again, we refer to :ref:`Synchronizing your code with
+MathJax <synchronize>` for
 details. Now modify test0.html and insert a ``text/x-mathjax-config``
 script just before the one loading MathJax. Use that to add
 ``measureTime.js`` to the list of extensions to load:
@@ -311,8 +311,8 @@ More Advanced Extensions
 ------------------------
 
 In general, writing more sophisticated extensions require a good
-understanding of the MathJax codebase. Although the `public MathJax
-API <http://docs.mathjax.org/en/latest/api/>`__ is available in the
+understanding of the MathJax codebase. Although the :ref:`public MathJax
+API <api/index>` is available in the
 documentation, this is not always the case of the internal code. The
 rule of thumb is thus to read the relevant ``jax.js`` files in
 ``unpacked/jax`` (if necessary the Javascript file they can load too)
