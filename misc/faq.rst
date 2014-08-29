@@ -303,13 +303,13 @@ MathJax. Here are several reasons web fonts might not be working for you:
    than the webpages using it, Firefox’s and IE9’s same-origin security
    policy for cross-domain scripting may prevent MathJax from loading
    web fonts. This specific problem, and a possible resolution, are
-   described in more detail in these `installation
-   instructions <http://www.mathjax.org/docs/1.1/installation.html#notes-about-shared-installations>`__.
+   described in more detail in these :ref:`installation
+   instructions <cross-domain-linking>`.
 -  **Local pages on IE9:** IE9’s same-origin security policy, which also
    affects shared installations (see above), has implications for the
    viewing of local files (with a ``file://[filename]`` URL). See these
-   `installation
-   instructions <http://www.mathjax.org/docs/1.1/installation.html#ie9-and-remote-fonts>`__
+   :ref:`installation
+   instructions <ie9-local-fonts-solution>`
    for details and a suggested resolution.
 
 Why doesn't the TeX macro ``\something`` work?
