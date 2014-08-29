@@ -295,7 +295,7 @@ MathJax. Here are several reasons web fonts might not be working for you:
    example, `Mads Kristensen's
    blog <http://madskristensen.net/post/Prepare-webconfig-for-HTML5-and-CSS3>`__
    and `Paul Irish's
-   blog <http://paulirish.com/2010/font-face-gotchas/>`__ for
+   blog <http://www.paulirish.com/2010/font-face-gotchas/>`__ for
    instructions on how to do this (as well as more background
    information).
 -  **Cross-domain access on shared installations:** When you are using a
@@ -345,7 +345,7 @@ is, in the document ``<head>`` include
 
 This will force all IE versions to use their latest engine which is the 
 optimal setting for MathJax. For more information, see the `Microsoft 
-documentation on compatibility modes <http://www.modern.ie/en-us/performance/how-to-use-x-ua-compatible>`__.
+documentation on compatibility modes <https://www.modern.ie/en-us/performance/how-to-use-x-ua-compatible>`__.
 
 Does MathJax support TeX macros?
 --------------------------------
