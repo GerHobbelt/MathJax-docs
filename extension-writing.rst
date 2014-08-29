@@ -120,7 +120,7 @@ render the same as ``test0.html``, except that a red "Hello World!"
 message is appended at the end of the page!
 
 Our goal is now to replace that message by something like "Typeset by
-MathJax in 2 second(s)". A quick look at the :ref:`MathJax Startup
+MathJax in 2 second(s)". A quick look at the :doc:`MathJax Startup
 Sequence <startup>` shows that the
 extensions are loaded before the typesetting pass. Also, the typesetting
 starts with a "Begin Typeset" signal and ends by a "End Typeset" signal.
