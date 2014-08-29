@@ -344,6 +344,7 @@ the fonts from ``MathJax/fonts/HTML-CSS/TeX/otf`` into your systems fonts
 directory and restart your browser (see the `MathJax fonts help page 
 <http://www.mathjax.org/help/fonts>`_ for details).
 
+.. _ie9-local-fonts-solution:
 
 IE9 and remote fonts
 ====================
