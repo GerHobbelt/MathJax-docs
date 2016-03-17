@@ -129,6 +129,7 @@ Others
    `Maxima <https://en.wikipedia.org/wiki/Maxima_(software)>`__.
 -  `Encalc <http://www.encalc.com>`__ (free online scientific
    calculator)
+-  `Derivative Calculator with Steps <http://www.emathhelp.net/calculators/calculus-1/derivative-calculator/>`__
 -  `Eqeditor <http://eqeditor.wordpress.com/>`__ (equation editor for
    iPad)
 -  `Mathbin <http://mathbin.heroku.com>`__ (math-aware paste-board site)
