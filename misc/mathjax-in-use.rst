@@ -141,6 +141,7 @@ Others
 -  `Mathway <https://mathway.com/>`__, equation editor.
 -  `Scientific Online
    Calculator <http://www.careerbless.com/calculators/ScientificCalculator/>`__
+   online maths Questions <http://ssconlineexam.com/>`__
 -  `TeXChat <https://github.com/jbenet/TeXchat>`__ an open source chat
    system using MathJax
 -  `TeX Rendr <http://texrendr.com/>`__ (a real-time TeX renderer)
