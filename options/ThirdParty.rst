@@ -21,7 +21,7 @@ configuration file, for example,
 .. code-block:: javascript
 
     <script type="text/x-mathjax-config">
-      MathJax.Ajax.config.path["Extra"] = "https://my.extra.com/mathjax/extra";
+      MathJax.Ajax.config.path["Extra"] = "https://my.extra.com/mathjax/extensions/legacy";
     </script>
 
 or equivalently,
@@ -31,7 +31,7 @@ or equivalently,
     <script type="text/javascript">
       window.MathJax = {
         AuthorInit: function () {
-              MathJax.Ajax.config.path["Extra"] = "https://my.extra.com/mathjax/extra";
+              MathJax.Ajax.config.path["Extra"] = "https://my.extra.com/mathjax/extensions/legacy";
             }
       };
     </script>
@@ -44,16 +44,16 @@ prefix. To continue the example, the following configuration would then load
 
     MathJax.Hub.Config({
       TeX:{
-        extensions: ["[Extra]/spiffy.js"]
+        extensions: ["[Extra]/physics/physics.js"]
       }
     });
 
 Note that the extension's ``loadComplete`` call needs to match this path, 
-i.e., ``spiffy.js`` should end with
+i.e., ``physics.js`` should end with
 
 .. code-block:: javascript
 
-    MathJax.Ajax.loadComplete("[Extra]/spiffy.js");
+    MathJax.Ajax.loadComplete("[Extra]/physics/physics.js");
 
 
 MathJax Third-Party extension repository
