@@ -15,6 +15,16 @@ We collect a list of third-party extensions on Github at `github.com/mathjax/Mat
 <https://github.com/mathjax/MathJax-third-party-extensions>`_. This repository 
 allows developers to publicize their custom extensions easily.
 
+This Page is written on the assumption this repo cloning into ``mathjax/extensions``
+
+.. code-block:: bash
+
+    cd
+    cd www/wp     # move domain root directory
+    mkdir mathjax
+    cd mathjax
+    git clone https://github.com/mathjax/MathJax-third-party-extensions.git extensions
+
 .. note:: 
 
     The mirrored copy on the MathJax CDN at `cdn.mathjax.org/mathjax/contrib/ 
