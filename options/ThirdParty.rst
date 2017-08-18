@@ -43,7 +43,9 @@ prefix. To continue the example, the following configuration would then load
 .. code-block:: javascript
 
     MathJax.Hub.Config({
-      extensions: ["[Extra]/spiffy.js"]
+      TeX:{
+        extensions: ["[Extra]/spiffy.js"]
+      }
     });
 
 Note that the extension's ``loadComplete`` call needs to match this path, 
