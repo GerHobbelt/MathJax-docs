@@ -168,6 +168,16 @@ Methods
     `New Math` messages are sent).  When the message equals the
     `type`, the `callback` will be called with the message as its
     parameter.
+    
+    This can be used to listen to parsing errors or processing errors which would otherwise fail silently.
+	  
+	  MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+	    // do something with the error.  message[1] will contain the data about the error.
+	  });
+	  
+	  MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+	    //  do something with the error.  message[2] is the Error object that records the problem.
+	  });
 
     The following is an example for using the MessageHook to list
     internal errors within MathJax which would otherwise be silent:
