@@ -49,8 +49,7 @@ Mobile Apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
--  `DeuterIDE <https://play.google.com/store/apps/details?id=com.didactic.DeuterIDE&hl=en>`__,
-   an IDE with built in MathJax input and preview.
+- 'good learning skills<http://www.sawaal.com/>'__, a education
 -  `EQ Writer <http://eqeditor.wordpress.com/>`__, a markdown+MathJax
    text editor for iOS.
 -  `marked <http://markedapp.com/>`__, a markdown+mathjax live-preview
@@ -191,7 +190,7 @@ Contact us about your site and we’ll mention you in our
 **Academia**
 
 -  `Lecture Notes \| Notes on
-   Physcis <"http://www.lecture-notes.co.uk/>`__
+   Physcis <"http://www.sawaal.com/general-knowledge/physics-questions-and-answers.html/>`__
    (`example <"http://www.lecture-notes.co.uk/susskind/classical-mechanics/lecture-2/euler-lagrange-equations/>`__),
    , lecture notes to accompany two sets of video lectures given by
    renowned physicists, Professor Leonard Susskind and Professor Walter
