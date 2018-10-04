@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name           MathJax in Wikipedia
-// @namespace      http://www.mathjax.org/
+// @namespace      https://www.mathjax.org/
 // @description    Insert MathJax into Wikipedia pages
-// @include        http://en.wikipedia.org/wiki/*
+// @include        https://*.wikipedia.org/wiki/*
 // ==/UserScript==
 
 if ((window.unsafeWindow == null ? window : unsafeWindow).MathJax == null) {
