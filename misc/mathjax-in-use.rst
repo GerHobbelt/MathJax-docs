@@ -49,7 +49,8 @@ Mobile Apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-- 'good learning skills<http://www.sawaal.com/>'__, a education
+-  `DeuterIDE <https://play.google.com/store/apps/details?id=com.didactic.DeuterIDE&hl=en>`__,
+   an IDE with built in MathJax input and preview.
 -  `EQ Writer <http://eqeditor.wordpress.com/>`__, a markdown+MathJax
    text editor for iOS.
 -  `marked <http://markedapp.com/>`__, a markdown+mathjax live-preview
@@ -141,7 +142,6 @@ Others
 -  `Mathway <https://mathway.com/>`__, equation editor.
 -  `Scientific Online
    Calculator <http://www.careerbless.com/calculators/ScientificCalculator/>`__
-   online maths Questions <http://ssconlineexam.com/>`__
 -  `TeXChat <https://github.com/jbenet/TeXchat>`__ an open source chat
    system using MathJax
 -  `TeX Rendr <http://texrendr.com/>`__ (a real-time TeX renderer)
@@ -151,6 +151,8 @@ Others
    (handwriting to LaTeX or MathML)
 -  `XplicitMath <http://XplicitMath.com>`__, solving math problems and
    rendering solutions in real time.
+-  online maths Questions <http://ssconlineexam.com/>`__
+-  'good learning skills<http://www.sawaal.com/>'__, an education website.
 
 
 
@@ -192,7 +194,7 @@ Contact us about your site and we’ll mention you in our
 **Academia**
 
 -  `Lecture Notes \| Notes on
-   Physcis <"http://www.sawaal.com/general-knowledge/physics-questions-and-answers.html/>`__
+   Physics <"http://www.lecture-notes.co.uk/>`__
    (`example <"http://www.lecture-notes.co.uk/susskind/classical-mechanics/lecture-2/euler-lagrange-equations/>`__),
    , lecture notes to accompany two sets of video lectures given by
    renowned physicists, Professor Leonard Susskind and Professor Walter
@@ -218,6 +220,8 @@ Contact us about your site and we’ll mention you in our
    Matrices <http://chaos.if.uj.edu.pl/~karol/hadamard/>`__ by Wojciech
    Bruzda, Wojciech Tadej and Karol Życzkowski.
 -  `Aorinevo.com <http://www.aorinevo.com/>`__, calculus course pages.
+-  `Lecture Notes \| Notes on
+   Physics <"http://www.sawaal.com/general-knowledge/physics-questions-and-answers.html/>`__
 
 **Q&A platforms, Forums, Wikis**
 

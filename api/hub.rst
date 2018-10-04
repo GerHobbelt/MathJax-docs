@@ -171,6 +171,8 @@ Methods
     
     This can be used to listen to parsing errors or processing errors which would otherwise fail silently.
 	  
+    .. code-block:: javascript
+
 	  MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
 	    // do something with the error.  message[1] will contain the data about the error.
 	  });
