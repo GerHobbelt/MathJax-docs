@@ -20,7 +20,7 @@ distributed network service, the tag might be
 .. code-block:: html
 
     <script type="text/javascript"
-       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js">
+       src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js">
     </script>
 
 If you have installed MathJax yourself, ``path-to-MathJax`` will be the
@@ -49,7 +49,7 @@ typical invocation of MathJax would be
 .. code-block:: html
 
     <script type="text/javascript"
-       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_CHTML">
+       src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_CHTML">
     </script>
 
 which loads MathJax with a configuration file that includes everything
@@ -108,7 +108,7 @@ you can load the current version via
 
 .. code-block::  sh
 
-  https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js   # the 2.7.5 release
+  //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js   # the 2.7.5 release
 
 Pre-releases are also available on `cdnjs`.
 
@@ -124,7 +124,7 @@ always use the latest version of MathJax, you can use
 
 .. code-block::  sh
 
-  https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/lastest.js   # the latest release
+  //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/lastest.js   # the latest release
 
 and MathJax will look up the lastest version and load that (regardless
 of the version number referenced in your URL).  That means you will
@@ -221,7 +221,7 @@ URL of the ``MathJax.js`` file.  For example
 .. code-block:: html
 
     <script type="text/javascript"
-       src="https://example.com/mathjax/MathJax.js?config=TeX-AMS-MML_CHTML">
+       src="//example.com/mathjax/MathJax.js?config=TeX-AMS-MML_CHTML">
     </script>
 
 loads the ``config/TeX-AMS-MML_CHTML.js`` configuration file from the
@@ -236,7 +236,7 @@ can use
 .. code-block:: html
 
     <script type="text/javascript"
-       src="https://example.com/mathjax/MathJax.js?config=TeX-AMS_CHTML,local/local">
+       src="//example.com/mathjax/MathJax.js?config=TeX-AMS_CHTML,local/local">
     </script>
 
 to first load the main configuration, then the local modifications.
@@ -256,7 +256,7 @@ from a CDN and still use your configuration file as follows:
 .. code-block:: html
 
     <script type="text/javascript"
-       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+       src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML,//myserver.com/MathJax/config/local/local.js">
     </script>
 
 Because the ``local.js`` file is not on the CDN server, you must give
@@ -268,7 +268,7 @@ in the ``config`` parameter.  In the example above, it would be
 
 .. code-block:: javascript
 
-    MathJax.Ajax.loadComplete("http://myserver.com/MathJax/config/local/local.js");
+    MathJax.Ajax.loadComplete("//myserver.com/MathJax/config/local/local.js");
 
 That is because the ``[MathJax]`` in the original URL refers to the
 root directory where ``MathJax.js`` was loaded, which is on the CDN,
