@@ -169,16 +169,19 @@ Methods
     `type`, the `callback` will be called with the message as its
     parameter.
     
-    This can be used to listen to parsing errors or processing errors which would otherwise fail silently.
+    This can be used to listen to parsing errors or processing errors
+    which would otherwise fail silently.
 	  
     .. code-block:: javascript
 
 	  MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
-	    // do something with the error.  message[1] will contain the data about the error.
+	    // do something with the error.
+		// message[1] will contain the data about the error.
 	  });
 	  
 	  MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
-	    //  do something with the error.  message[2] is the Error object that records the problem.
+	    // do something with the error.
+		// message[2] is the Error object that records the problem.
 	  });
 
     The following is an example for using the MessageHook to list
@@ -187,11 +190,13 @@ Methods
     .. code-block:: javascript
 
 		MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
-		// do something with the error.  message[1] will contain the data about the error.
+			// do something with the error.
+			// message[1] will contain the data about the error.
 		});
 
 		MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
-		//  do something with the error.  message[2] is the Error object that records the problem.
+			// do something with the error.
+			// message[2] is the Error object that records the problem.
 		});
 
     :Parameters:
