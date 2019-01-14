@@ -62,7 +62,7 @@ To jump start using `cdnjs`, you accomplish the first step by putting
 .. code-block:: html
 
     <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+      src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
 
 into the ``<head>`` block of your document.  (It can also go in the
@@ -94,7 +94,7 @@ select its latest version for you.  To do this, use
 .. code-block:: html
 
     <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+      src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
     </script>
 
 into the ``<head>`` block of your document.  In this case, MathJax will 

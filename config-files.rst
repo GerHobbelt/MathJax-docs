@@ -614,8 +614,8 @@ The Accessible configuration is equivalent to the following:
       },
       menuSettings: {
         zoom: "Double-Click",
-	mpContext: true,
-	mpMouse: true
+        mpContext: true,
+        mpMouse: true
       },
       errorSettings: { message: ["[Math Error]"] }
     });

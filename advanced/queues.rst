@@ -116,9 +116,9 @@ before proceeding.  For example,
 .. code-block:: javascript
 
     MathJax.Callback.Queue(
-        [f, 1],
-        MathJax.Ajax.Require("[MathJax]/extensions/AMSmath.js"),
-        [f, 2],
+      [f, 1],
+      MathJax.Ajax.Require("[MathJax]/extensions/AMSmath.js"),
+      [f, 2],
    );
 
 starts the loading of the AMSmath extension before the queue is
@@ -164,11 +164,11 @@ whatever order) to perform some command.  For instance,
 .. code-block:: javascript
 
     MathJax.Callback.Queue(
-        MathJax.Ajax.Require("file1.js"),
-        MathJax.Ajax.Require("file2.js"),
-        MathJax.Ajax.Require("file3.js"),
-        MathJax.Ajax.Require("file4.js"),
-        [f, "all done"]
+      MathJax.Ajax.Require("file1.js"),
+      MathJax.Ajax.Require("file2.js"),
+      MathJax.Ajax.Require("file3.js"),
+      MathJax.Ajax.Require("file4.js"),
+      [f, "all done"]
     );
 
 starts four files loading all at once, and waits for all four to

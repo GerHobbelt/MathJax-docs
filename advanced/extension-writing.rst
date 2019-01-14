@@ -32,23 +32,23 @@ write a file like
 
 .. code-block:: html
 
-       MathJax/unpacked/test0.html
+    MathJax/unpacked/test0.html
 
-       <!doctype html>
-       <html>
-         <head>
-           <title>testcase</title>
-           <meta charset="utf-8">
-           <script type="text/javascript"
-                   src="http://localhost/MathJax/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
-           </script>
-         </head>
-         <body>
-           <p>TeX: \(\frac a b\)</p>
-           <p>MathML: <math><msqrt><mi>x</mi></msqrt></math></p>
-           <p>AsciiMath: `a^2 + b^2 = c^2`</p>
-         </body>
-       </html>
+    <!doctype html>
+    <html>
+      <head>
+        <title>testcase</title>
+        <meta charset="utf-8">
+        <script type="text/javascript"
+          src="http://localhost/MathJax/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+      </head>
+      <body>
+        <p>TeX: \(\frac a b\)</p>
+        <p>MathML: <math><msqrt><mi>x</mi></msqrt></math></p>
+        <p>AsciiMath: `a^2 + b^2 = c^2`</p>
+      </body>
+    </html>
 
 then the page ``http://localhost/MathJax/unpacked/test0.html`` should
 contain formatted equations corresponding to the TeX, MathML and
@@ -88,10 +88,11 @@ typeset the page. First we create the following Javascript file:
 
 .. code-block:: javascript
 
-       // unpacked/extensions/measureTime.js
+    // unpacked/extensions/measureTime.js
 
-       MathJax.HTML.addElement(document.body, "div", {style: {color: "red"}}, ["Hello World!"]);
-       MathJax.Ajax.loadComplete("[MathJax]/extensions/measureTime.js");
+    MathJax.HTML.addElement(document.body, "div", {style: {color: "red"}}, ["Hello World!"]);
+    MathJax.Ajax.loadComplete("[MathJax]/extensions/measureTime.js");
+
 
 The first line is just using the convenient
 :ref:`MathJax.HTML <api-html>` to
@@ -105,15 +106,15 @@ script just before the one loading MathJax. Use that to add
 
 .. code-block:: html
 
-      <!-- MathJax/test/test1.html -->
+    <!-- MathJax/test/test1.html -->
 
-      ...
-          <script type="text/x-mathjax-config">
-             MathJax.Hub.config.extensions.push("measureTime.js");
-          </script>
-          <script type="text/javascript"
-                  src="http://localhost/MathJax/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
-      ...
+    ...
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.config.extensions.push("measureTime.js");
+      </script>
+      <script type="text/javascript"
+        src="http://localhost/MathJax/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+    ...
 
 The page ``http://localhost/MathJax/unpacked/test1.html`` should now
 render the same as ``test0.html``, except that a red "Hello World!"
@@ -137,25 +138,25 @@ Finally when we listen the final End signal, we append the desired div
 
 .. code-block:: javascript
 
-      // unpacked/extensions/measureTime.js
+    // unpacked/extensions/measureTime.js
 
-      MathJax.Extension.measureTime = {};
+    MathJax.Extension.measureTime = {};
 
-      MathJax.Hub.Register.StartupHook("Begin Typeset", function () {
-        MathJax.Extension.measureTime.startTime = (new Date()).getTime();
-      });
+    MathJax.Hub.Register.StartupHook("Begin Typeset", function () {
+      MathJax.Extension.measureTime.startTime = (new Date()).getTime();
+    });
 
-      MathJax.Hub.Register.StartupHook("End Typeset", function () {
-        MathJax.Extension.measureTime.endTime = (new Date()).getTime();
-      });
+    MathJax.Hub.Register.StartupHook("End Typeset", function () {
+      MathJax.Extension.measureTime.endTime = (new Date()).getTime();
+    });
 
-      MathJax.Hub.Register.StartupHook("End", function () {
-        var delta = (MathJax.Extension.measureTime.endTime - MathJax.Extension.measureTime.startTime) / 1000.;
-        MathJax.HTML.addElement(document.body, "div", null,
-                                ["Typeset by MathJax in " + delta + " second(s)"]);
-      });
+    MathJax.Hub.Register.StartupHook("End", function () {
+      var delta = (MathJax.Extension.measureTime.endTime - MathJax.Extension.measureTime.startTime) / 1000.;
+      MathJax.HTML.addElement(document.body, "div", null,
+          ["Typeset by MathJax in " + delta + " second(s)"]);
+    });
 
-      MathJax.Ajax.loadComplete("[MathJax]/extensions/measureTime.js");
+    MathJax.Ajax.loadComplete("[MathJax]/extensions/measureTime.js");
 
 Now load ``test1.html`` again (clearing the browser cache if necessary)
 and verify if you see the desired "Typeset by MathJax in ... seconds"
@@ -177,20 +178,20 @@ macros. Consider the following example:
 
 .. code-block:: javascript
 
-      //unpacked/extensions/TeX/Taylor.js
+    //unpacked/extensions/TeX/Taylor.js
 
-      MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
-        MathJax.InputJax.TeX.Definitions.Add({
-          macros: {
-            expexpansion: ["Macro", "\\sum_{n=0}^{+\\infty} \\frac{x^n}{n!}"],
-            taylor: ["Macro","\\sum_{n=0}^{+\\infty} \\frac{{#1}^{(n)} \\left({#2}\\right)}{n!} {\\left( {#3} - {#2} \\right)}^n", 3],
-            taylorlog: ["Macro","\\sum_{n=1}^{+\\infty} {(-1)}^{n+1} \\frac{#1^n}{n}", 1],
-            taylorsin: ["Macro","\\sum_{n=0}^{+\\infty} \\frac{{(-1)}^n}{(2n+1)!} {#1}^{2n+1}", 1]
-          }
-        });
+    MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
+      MathJax.InputJax.TeX.Definitions.Add({
+        macros: {
+          expexpansion: ["Macro", "\\sum_{n=0}^{+\\infty} \\frac{x^n}{n!}"],
+          taylor: ["Macro","\\sum_{n=0}^{+\\infty} \\frac{{#1}^{(n)} \\left({#2}\\right)}{n!} {\\left( {#3} - {#2} \\right)}^n", 3],
+          taylorlog: ["Macro","\\sum_{n=1}^{+\\infty} {(-1)}^{n+1} \\frac{#1^n}{n}", 1],
+          taylorsin: ["Macro","\\sum_{n=0}^{+\\infty} \\frac{{(-1)}^n}{(2n+1)!} {#1}^{2n+1}", 1]
+        }
       });
+    });
 
-      MathJax.Ajax.loadComplete("[MathJax]/extensions/TeX/Taylor.js");
+    MathJax.Ajax.loadComplete("[MathJax]/extensions/TeX/Taylor.js");
 
 The structure is similar to the measureTime extension: we wait until the
 TeX input is ready by listening the appropriate signal. Then we extend
@@ -198,7 +199,7 @@ the set of TeX macros with some definitions. For example
 
 .. code-block:: javascript
 
-      expexpansion: ["Macro", "\\sum_{n=0}^{+\\infty} \\frac{x^n}{n!}"]
+    expexpansion: ["Macro", "\\sum_{n=0}^{+\\infty} \\frac{x^n}{n!}"]
 
 will define a TeX command for the exponential series. Note these
 definitions are given in Javascript strings, so you need to escape some
@@ -208,7 +209,7 @@ macro has parameters, you must specify the expected number thus the
 
 .. code-block:: javascript
 
-      taylor: ["Macro","\\sum_{n=0}^{+\\infty} \\frac{{#1}^{(n)} \\left({#2}\\right)}{n!} {\\left( {#3} - {#2} \\right)}^n", 3],
+    taylor: ["Macro","\\sum_{n=0}^{+\\infty} \\frac{{#1}^{(n)} \\left({#2}\\right)}{n!} {\\left( {#3} - {#2} \\right)}^n", 3],
 
 Finally, you can use the Taylor extension in a test page:
 
@@ -226,7 +227,6 @@ Finally, you can use the Taylor extension in a test page:
     \[ \exp(x) = \expexpansion \]
 
     \[ f(x) = \taylor{f}{x}{a} \]
-
 
     \[ \log(1+h) = \taylorlog{h} \text{ for } |h| \lt 1 \]
 
@@ -247,40 +247,40 @@ appropriate place for that is of course after the macros are defined:
 
 .. code-block:: javascript
 
-      // unpacked/extensions/TeX/Taylor.js
+    // unpacked/extensions/TeX/Taylor.js
 
-      MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
-        MathJax.InputJax.TeX.Definitions.Add({
-          ...
-        });
-        MathJax.Hub.Startup.signal.Post("TeX Taylor Ready");
+    MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
+      MathJax.InputJax.TeX.Definitions.Add({
+        ...
       });
+      MathJax.Hub.Startup.signal.Post("TeX Taylor Ready");
+    });
 
-      MathJax.Ajax.loadComplete("[MathJax]/extensions/TeX/Taylor.js");
+    MathJax.Ajax.loadComplete("[MathJax]/extensions/TeX/Taylor.js");
 
 Now define Taylor2.js as follows:
 
 .. code-block:: javascript
 
-      // unpacked/extensions/TeX/Taylor2.js
+    // unpacked/extensions/TeX/Taylor2.js
 
-      MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
-        MathJax.InputJax.TeX.Definitions.Add({
-          macros: {
-            sinexpansion: ["Extension", "Taylor"]
-          }
-        });
+    MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
+      MathJax.InputJax.TeX.Definitions.Add({
+        macros: {
+          sinexpansion: ["Extension", "Taylor"]
+        }
       });
+    });
 
-      MathJax.Hub.Register.StartupHook("TeX Taylor Ready", function () {
-        MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions, {
-          macros: {
-            sinexpansion: ["Macro", "\\taylorsin{x}"]
-          }
-        });
+    MathJax.Hub.Register.StartupHook("TeX Taylor Ready", function () {
+      MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions, {
+        macros: {
+          sinexpansion: ["Macro", "\\taylorsin{x}"]
+        }
       });
+    });
 
-      MathJax.Ajax.loadComplete("[MathJax]/extensions/TeX/Taylor2.js");
+    MathJax.Ajax.loadComplete("[MathJax]/extensions/TeX/Taylor2.js");
 
 When the input Jax is ready, ``\sinexpansion`` will be define as a
 function that loads the Taylor extension and restarts the processing
@@ -329,49 +329,46 @@ the TeX parser to understand how this extension is working.
 
 .. code-block:: javascript
 
-      //unpacked/extensions/bevelledFraction.js
+    //unpacked/extensions/bevelledFraction.js
 
-      MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
-        MathJax.InputJax.TeX.Definitions.Add({
-          macros: {
-            frac: "Frac",
-            bfrac: "BFrac"
-          }
-        }, null, true);
-        MathJax.InputJax.TeX.Parse.Augment({
-          Frac: function (name) {
+    MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
+      MathJax.InputJax.TeX.Definitions.Add({
+        macros: {
+          frac: "Frac",
+          bfrac: "BFrac"
+        }
+      }, null, true);
+      MathJax.InputJax.TeX.Parse.Augment({
+        Frac: function (name) {
+          var old = this.stack.env.bevelled; this.stack.env.bevelled = true;
+          var num = this.ParseArg(name);
+          var den = this.ParseArg(name);
+          this.stack.env.bevelled = old;
 
-            var old = this.stack.env.bevelled; this.stack.env.bevelled = true;
-            var num = this.ParseArg(name);
-            var den = this.ParseArg(name);
-            this.stack.env.bevelled = old;
+          var frac = MathJax.ElementJax.mml.mfrac(num, den);
+          frac.bevelled = this.stack.env.bevelled;
+          this.Push(frac);
+        },
+        BFrac: function (name) {
+          var bevelled = this.GetBrackets(name);
+          if (bevelled === "auto")
+            bevelled = this.stack.env.bevelled;
+          else
+            bevelled = (bevelled !== "false");
 
-            var frac = MathJax.ElementJax.mml.mfrac(num, den);
-            frac.bevelled = this.stack.env.bevelled;
-            this.Push(frac);
-          },
-          BFrac: function (name) {
+          var old = this.stack.env.bevelled; this.stack.env.bevelled = true;
+          var num = this.ParseArg(name);
+          var den = this.ParseArg(name);
+          this.stack.env.bevelled = old;
 
-            var bevelled = this.GetBrackets(name);
-            if (bevelled === "auto")
-              bevelled = this.stack.env.bevelled;
-            else
-              bevelled = (bevelled !== "false");
-
-            var old = this.stack.env.bevelled; this.stack.env.bevelled = true;
-            var num = this.ParseArg(name);
-            var den = this.ParseArg(name);
-            this.stack.env.bevelled = old;
-
-            var frac = MathJax.ElementJax.mml.mfrac(num, den);
-            frac.bevelled = bevelled;
-            this.Push(frac);
-          }
-        });
-
+          var frac = MathJax.ElementJax.mml.mfrac(num, den);
+          frac.bevelled = bevelled;
+          this.Push(frac);
+        }
       });
+    });
 
-      MathJax.Ajax.loadComplete("[MathJax]/extensions/TeX/mfracBevelled.js");
+    MathJax.Ajax.loadComplete("[MathJax]/extensions/TeX/mfracBevelled.js");
 
 Again you can use this command in a ``test4`` page.
 

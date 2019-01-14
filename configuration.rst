@@ -20,7 +20,7 @@ distributed network service, the tag might be
 .. code-block:: html
 
     <script type="text/javascript"
-       src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js">
+      src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js">
     </script>
 
 If you have installed MathJax yourself, ``path-to-MathJax`` will be the
@@ -49,7 +49,7 @@ typical invocation of MathJax would be
 .. code-block:: html
 
     <script type="text/javascript"
-       src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_CHTML">
+      src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_CHTML">
     </script>
 
 which loads MathJax with a configuration file that includes everything
@@ -221,7 +221,7 @@ URL of the ``MathJax.js`` file.  For example
 .. code-block:: html
 
     <script type="text/javascript"
-       src="//example.com/mathjax/MathJax.js?config=TeX-AMS-MML_CHTML">
+      src="//example.com/mathjax/MathJax.js?config=TeX-AMS-MML_CHTML">
     </script>
 
 loads the ``config/TeX-AMS-MML_CHTML.js`` configuration file from the
@@ -236,7 +236,7 @@ can use
 .. code-block:: html
 
     <script type="text/javascript"
-       src="//example.com/mathjax/MathJax.js?config=TeX-AMS_CHTML,local/local">
+      src="//example.com/mathjax/MathJax.js?config=TeX-AMS_CHTML,local/local">
     </script>
 
 to first load the main configuration, then the local modifications.
@@ -256,7 +256,7 @@ from a CDN and still use your configuration file as follows:
 .. code-block:: html
 
     <script type="text/javascript"
-       src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML,//myserver.com/MathJax/config/local/local.js">
+      src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML,//myserver.com/MathJax/config/local/local.js">
     </script>
 
 Because the ``local.js`` file is not on the CDN server, you must give
@@ -447,7 +447,7 @@ example, you could use
 .. code-block:: html
 
     <script type="text/javascript"
-       src="path-to-MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured">
+      src="path-to-MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured">
     </script>
 
 in your theme's header file, and

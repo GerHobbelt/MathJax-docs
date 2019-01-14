@@ -144,12 +144,12 @@ to your page just before the ``<script>`` tag that loads
 
 .. note::
 
-    Line breaking only applies to displayed equations, not
-    in-line equations (unless the in-line equation is itself longer than a
-    line), and the line-breaks are only computed once when the
-    equation is initially typeset, and do not change if the user changes
-    the window size, or if the container changes size for some other
-    reason.
+  Line breaking only applies to displayed equations, not
+  in-line equations (unless the in-line equation is itself longer than a
+  line), and the line-breaks are only computed once when the
+  equation is initially typeset, and do not change if the user changes
+  the window size, or if the container changes size for some other
+  reason.
 
 You can control what width is used to determine where the line breaks
 shoud occur using the ``container`` parameter of the ``linebreaks``
@@ -202,14 +202,15 @@ In general, you can do the following:
 
 .. code-block:: html
 
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Register.StartupHook("End Jax",function () {
-    var BROWSER = MathJax.Hub.Browser;
-    var jax = "HTML-CSS";
-    if (BROWSER.isMSIE && BROWSER.hasMathPlayer) jax = "NativeMML";
-    return MathJax.Hub.setRenderer(jax);
-  });
-  </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Register.StartupHook("End Jax",function () {
+      var BROWSER = MathJax.Hub.Browser;
+      var jax = "HTML-CSS";
+      if (BROWSER.isMSIE && BROWSER.hasMathPlayer) 
+        jax = "NativeMML";
+      return MathJax.Hub.setRenderer(jax);
+    });
+    </script>
 
 This does essentially what the ``MMLorHTML`` configuration did in its
 default settings.  You can, of course, substitute whatever output you
@@ -218,16 +219,19 @@ if-then statements for other browsers.  E.g.,
 
 .. code-block:: html
 
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Register.StartupHook("End Jax",function () {
-    var BROWSER = MathJax.Hub.Browser;
-    var jax = "HTML-CSS";
-    if (BROWSER.isMSIE && BROWSER.hasMathPlayer) jax = "NativeMML";
-    if (BROWSER.isFirefox) jax = "SVG";
-    if (BROWSER.isSafari && BROWSER.versionAtLeast("5.0")) jax = "NativeMML";
-    return MathJax.Hub.setRenderer(jax);
-  });
-  </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Register.StartupHook("End Jax",function () {
+      var BROWSER = MathJax.Hub.Browser;
+      var jax = "HTML-CSS";
+      if (BROWSER.isMSIE && BROWSER.hasMathPlayer) 
+        jax = "NativeMML";
+      if (BROWSER.isFirefox) 
+        jax = "SVG";
+      if (BROWSER.isSafari && BROWSER.versionAtLeast("5.0")) 
+        jax = "NativeMML";
+      return MathJax.Hub.setRenderer(jax);
+    });
+    </script>
 
 
 This illustrates using :meth:`BROWSER.versionAtLeast()` to make some
@@ -244,29 +248,33 @@ MathML mode if they browser can handle that.
 
 .. code-block:: html
 
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Register.StartupHook("End Jax",function () {
-    var BROWSER = MathJax.Hub.Browser;
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Register.StartupHook("End Jax",function () {
+      var BROWSER = MathJax.Hub.Browser;
 
-    var canUseMML = (BROWSER.isFirefox && BROWSER.versionAtLeast("1.5")) ||
-                    (BROWSER.isMSIE    && BROWSER.hasMathPlayer) ||
-                    (BROWSER.isSafari  && BROWSER.versionAtLeast("5.0")) ||
-                    (BROWSER.isOpera   && BROWSER.versionAtLeast("9.52") &&
-                                         !BROWSER.versionAtLeast("14.0"));
+      var canUseMML = (BROWSER.isFirefox && BROWSER.versionAtLeast("1.5")) ||
+                      (BROWSER.isMSIE    && BROWSER.hasMathPlayer) ||
+                      (BROWSER.isSafari  && BROWSER.versionAtLeast("5.0")) ||
+                      (BROWSER.isOpera   && BROWSER.versionAtLeast("9.52") &&
+                                           !BROWSER.versionAtLeast("14.0"));
 
-    var CONFIG = MathJax.Hub.CombineConfig("MMLorHTML",{
-      prefer: {
-        MSIE:"MML", Firefox:"HTML", Opera:"HTML", Chrome:"HTML", Safari:"HTML",
-        other:"HTML"
-      }
+      var CONFIG = MathJax.Hub.CombineConfig("MMLorHTML",{
+        prefer: {
+          MSIE:"MML", Firefox:"HTML", Opera:"HTML", Chrome:"HTML", Safari:"HTML",
+          other:"HTML"
+        }
+      });
+
+      var jax = CONFIG.prefer[BROWSER] || CONFIG.prefer.other;
+      if (jax === "HTML") 
+        jax = "HTML-CSS"; 
+      else if (jax === "MML")  
+        jax = "NativeMML";
+      if (jax === "NativeMML" && !canUseMML) 
+        jax = CONFIG.prefer.other;
+      return MathJax.Hub.setRenderer(jax);
     });
-
-    var jax = CONFIG.prefer[BROWSER] || CONFIG.prefer.other;
-    if (jax === "HTML") jax = "HTML-CSS"; else if (jax === "MML")  jax = "NativeMML";
-    if (jax === "NativeMML" && !canUseMML) jax = CONFIG.prefer.other;
-    return MathJax.Hub.setRenderer(jax);
-  });
-  </script>
+    </script>
 
 
 The deprecated ``MMLorHTML`` extension also included version checking
@@ -282,7 +290,8 @@ just aren't used any more.
 
 .. warning::
 
-  This extension has been deprecated in MathJax v2.6.  See the section above for alternatives.
+  This extension has been deprecated in MathJax v2.6.  
+  See the section above for alternatives.
 
 With the decline of MathPlayer, the general lack of development of
 native MathML implementations, and the increase in output options in
@@ -363,7 +372,7 @@ standard values such as the following:
 
 .. code-block:: html
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 .. _ie-emulation-modes:

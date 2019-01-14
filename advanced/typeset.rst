@@ -27,7 +27,7 @@ To queue the typeset action, use the command
 
 .. code-block:: javascript
 
-   MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 This will cause MathJax to typeset the page when it is next able to do
 so.  It guarantees that the typesetting will synchronize properly
@@ -43,15 +43,15 @@ which case, MathJax will look up the DOM element for you.  So
 
 .. code-block:: javascript
 
-   MathJax.Hub.Queue(["Typeset",MathJax.Hub,"MathExample"]);
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub,"MathExample"]);
 
 would typeset the mathematics contained in the element whose `id` is
 ``MathExample``.  This is equivalent to
 
 .. code-block:: javascript
 
-   var math = document.getElementById("MathExample");
-   MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+    var math = document.getElementById("MathExample");
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
 
 If no element or element `id` is provided, the whole document is
 typeset.
@@ -195,56 +195,53 @@ available in `test/sample-dynamic.html
 
     <html>
     <head>
-    <title>MathJax Dynamic Math Test Page</title>
+      <title>MathJax Dynamic Math Test Page</title>
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [["$","$"],["\\(","\\)"]]
-        }
-      });
-    </script>
-    <script type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML-full">
-    </script>
-
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [["$","$"],["\\(","\\)"]]
+          }
+        });
+      </script>
+      <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML-full">
+      </script>
     </head>
     <body>
-
-    <script>
-      //
-      //  Use a closure to hide the local variables from the
-      //  global namespace
-      //
-      (function () {
-        var QUEUE = MathJax.Hub.queue;  // shorthand for the queue
-        var math = null;                // the element jax for the math output.
-
+      <script>
         //
-        //  Get the element jax when MathJax has produced it.
+        //  Use a closure to hide the local variables from the
+        //  global namespace
         //
-        QUEUE.Push(function () {
-          math = MathJax.Hub.getAllJax("MathOutput")[0];
-        });
+        (function () {
+          var QUEUE = MathJax.Hub.queue;  // shorthand for the queue
+          var math = null;                // the element jax for the math output.
 
-        //
-        //  The onchange event handler that typesets the
-        //  math entered by the user
-        //
-        window.UpdateMath = function (TeX) {
-          QUEUE.Push(["Text",math,"\\displaystyle{"+TeX+"}"]);
-        }
-      })();
-    </script>
+          //
+          //  Get the element jax when MathJax has produced it.
+          //
+          QUEUE.Push(function () {
+            math = MathJax.Hub.getAllJax("MathOutput")[0];
+          });
 
-    Type some TeX code:
-    <input id="MathInput" size="50" onchange="UpdateMath(this.value)" />
-    <p>
+          //
+          //  The onchange event handler that typesets the
+          //  math entered by the user
+          //
+          window.UpdateMath = function (TeX) {
+            QUEUE.Push(["Text",math,"\\displaystyle{"+TeX+"}"]);
+          }
+        })();
+      </script>
 
-    <div id="MathOutput">
-    You typed: ${}$
-    </div>
+      Type some TeX code:
+      <input id="MathInput" size="50" onchange="UpdateMath(this.value)" />
+      <p>
 
+      <div id="MathOutput">
+        You typed: ${}$
+      </div>
     </body>
     </html>
 

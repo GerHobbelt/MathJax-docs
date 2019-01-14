@@ -94,7 +94,7 @@ example,
 
 .. code:: html
 
-	... when `x<y` we have ...
+    ... when `x<y` we have ...
 
 will cause a problem, because the browser will think ``<y`` is the
 beginning of a tag named ``y`` (even though there is no such tag in
@@ -111,7 +111,7 @@ cause the browser to avoid them, so
 
 .. code:: html
 
-	... when `x < y` we have ...
+    ... when `x < y` we have ...
 
 should work.  Alternatively, you can use the HTML entities ``&lt;``,
 ``&gt;`` and ``&amp;`` to encode these characters so that the browser
@@ -119,7 +119,7 @@ will not interpret them, but MathJax will.  E.g.,
 
 .. code-block:: html
 
-	  ... when `x &lt; y` we have ...
+    ... when `x &lt; y` we have ...
 
 Keep in mind that the browser interprets your text before MathJax
 does.

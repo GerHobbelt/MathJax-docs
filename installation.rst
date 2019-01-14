@@ -228,7 +228,7 @@ on your system, just execute the following command:
 
 .. code-block:: sh
 
-  npm install mathjax
+    npm install mathjax
 
 .. note::
   The distribution on ``npm`` does not contain the PNG fonts
@@ -270,7 +270,7 @@ installation is working properly::
         index.html          # Tests default configuration
         index-images.html   # Tests image-font fallback display
         sample.html         # Sample page with lots of pretty equations
-	examples.html       # Page with links to all sample pages
+        examples.html       # Page with links to all sample pages
 
 Open these files in your browser to see that they appear to be working
 properly.  If you have installed MathJax on a server, use the web
@@ -322,11 +322,11 @@ server <http://www.apache.org/>`_.  In the remote server's
 ``.htaccess`` that contains the following lines:
 ::
 
-   <FilesMatch "\.(ttf|otf|eot|woff)$">
-   <IfModule mod_headers.c>
-   Header set Access-Control-Allow-Origin "*"
-   </IfModule>
-   </FilesMatch>
+    <FilesMatch "\.(ttf|otf|eot|woff)$">
+    <IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    </IfModule>
+    </FilesMatch>
 
 and make sure the permissions allow the server to read this file.  (The
 file's name starts with a period, which causes it to be an "invisible" file
@@ -340,7 +340,7 @@ download the web-based fonts.  If you want to restrict the sites that can
 access the web fonts, change the ``Access-Control-Allow-Origin`` line to
 something like::
 
-   Header set Access-Control-Allow-Origin "http://www.math.yourcollege.edu"
+    Header set Access-Control-Allow-Origin "http://www.math.yourcollege.edu"
 
 so that only pages at ``www.math.yourcollege.edu`` will be able to
 download the fonts from this site.  See the open font library

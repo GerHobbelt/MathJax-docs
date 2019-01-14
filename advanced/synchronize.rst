@@ -58,10 +58,9 @@ signals.
 Each of these is explained in more detail in the links below:
 
 .. toctree::
-    :maxdepth: 1
+  :maxdepth: 1
 
-    Using Callbacks <callbacks>
-    Using Queues <queues>
-    Using Signals <signals>
-
+  Using Callbacks <callbacks>
+  Using Queues <queues>
+  Using Signals <signals>
 

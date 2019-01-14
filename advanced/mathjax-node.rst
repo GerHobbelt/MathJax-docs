@@ -11,6 +11,6 @@ To install via NPM use
 
 .. code-block:: bash
 
-  npm install mathjax-node
+    npm install mathjax-node
 
 For more information visit `the GitHub repository  <https://github.com/mathjax/MathJax-node>`__.
